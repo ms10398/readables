@@ -1,0 +1,13 @@
+{
+  "name": "readables",
+  "version": "1.0.0",
+  "description": "Wrapper",
+  "scripts": {
+    "start": "concurrently --kill-others \"cd api-server && node server.js\" \"cd frontend && npm run start\""
+  },
+  "author": "ms10398",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
+}

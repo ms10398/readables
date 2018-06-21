@@ -4,7 +4,8 @@ import CommentDelete from './CommentDelete'
 
 class Comment extends Component {
   state = {
-    comment: ''
+    comment: '',
+    author: ''
   }
 
   // Edit Comment
@@ -18,9 +19,10 @@ class Comment extends Component {
   }
 
   componentDidMount() {
-    const { body } = this.props
+    const { body,author } = this.props
     this.setState({
-      comment: body
+      comment: body,
+      author: author
     })
   }
 
@@ -31,6 +33,7 @@ class Comment extends Component {
   }
 
   render() {
+    console.log(this.props);
     if(this.props.editId === this.props.id) {
       return(
         <div>
@@ -57,7 +60,7 @@ class Comment extends Component {
       return(
         <div>
           <div>
-            {this.state.comment}
+            {this.state.comment} - {this.state.author}
           </div>
           <div>
             <CommentEdit

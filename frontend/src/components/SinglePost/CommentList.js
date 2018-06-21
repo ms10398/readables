@@ -69,6 +69,7 @@ class CommentList extends Component {
               onEdit={this.onEdit}
               editId={this.state.editId}
               id={comment.id}
+              author={comment.author}
               body={comment.body}/>
           </div>
         </li>

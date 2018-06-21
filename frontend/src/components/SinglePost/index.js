@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPost, addComment } from '../../actions/actions'
+import { Link, Redirect  } from 'react-router-dom'
 import PostInfo from './PostInfo'
 import { CommentForm } from './CommentForm'
 import CommentList from './CommentList'
@@ -57,7 +58,7 @@ class PostDetail extends Component {
         <CommentList comments={comments} />
       </div>
     )
-  }
+}
 }
 
 const mapStateToProps = ({ post }) => {

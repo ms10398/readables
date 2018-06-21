@@ -48,10 +48,13 @@ class PostInfo extends Component {
   }
 
   render() {
-    const { id, author, body, category, title, voteScore, timestamp } = this.props.post
-
+    const { id, author, body, category, title, voteScore, timestamp, commentCount } = this.props.post
+    console.log(this.state.deleted);
     if (this.state.deleted) {
       return (<Redirect to='/' />)
+    } else if(!(this.props.post.id)) {
+      console.log(this.props.post);
+      return (<Redirect to='/404' />)
     } else {
       return(
         <Row>
@@ -73,6 +76,9 @@ class PostInfo extends Component {
             </CardText>
             <CardText>
               <Author author={author}/>
+            </CardText>
+            <CardText>
+              Comments: {commentCount}
             </CardText>
             <Col>
               <Button color="info" style={{

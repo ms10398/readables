@@ -7,6 +7,7 @@ import PostDetail from './SinglePost/'
 import NewPost from './New/'
 import EditPost from './EditPost/EditPost'
 import AddButton from './AddButton'
+import NotFound from './NotFound'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css'
@@ -25,6 +26,7 @@ class App extends Component {
             <Switch>
               <Route exact path ='/' component={Posts} />
               <Route exact path ='/new' component={NewPost} />
+              <Route exact path ='/404' component={NotFound} />
               <Route exact path ='/edit/:id' component={EditPost} />
               <Route exact path ='/:category' component={Posts} />
               <Route exact path ='/:category/:id' component={PostDetail} />
